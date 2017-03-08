@@ -10,11 +10,8 @@
 	<script src="<?php echo Yii::app()->request->baseUrl; ?>/protected/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="<?php echo Yii::app()->request->baseUrl; ?>/protected/vendor/metisMenu/metisMenu.min.js"></script>
 	<script src="<?php echo Yii::app()->request->baseUrl; ?>/protected/vendor/dist/js/sb-admin-2.js"></script>
-	<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.js"></script>
-	<link src="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.css">
-	<link src="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.print.css">-->
+	<script src='<?php echo Yii::app()->request->baseUrl; ?>/protected/vendor/moment/moment.js'></script>
 
-	
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print">
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css">
@@ -208,28 +205,10 @@
 		    </div>
 		    <!-- /.navbar-static-side -->
 		</nav>
-		<div id="page-wrapper" style="background-color: #FFF">	
+		<div id="page-wrapper" style="background-color: #FFF">
 			<div id="page">
-				<div id="mainmenu">
-					<?php $this->widget('zii.widgets.CMenu',array(
-						'items'=>array(
-							array('label'=>'Home', 'url'=>array('/site/index')),
-							array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-							array('label'=>'Contact', 'url'=>array('/site/contact')),
-							array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-							array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-						),
-					)); ?>
-				</div>
-				<?php if(isset($this->breadcrumbs)):?>
-					<?php $this->widget('zii.widgets.CBreadcrumbs', array(
-						'links'=>$this->breadcrumbs,
-					)); ?>
-				<?php endif?>
-
 				<?php echo $content; ?>
-
-				<div class="clear"></div>				
+				<div class="clear"></div>
 			</div>
 		</div>
 	</div>
