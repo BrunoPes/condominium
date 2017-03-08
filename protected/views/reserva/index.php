@@ -7,7 +7,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Reserva', 'url'=>array('create')),
+	array('label'=>'Criar reserva', 'url'=>array('create')),
 	array('label'=>'Manage Reserva', 'url'=>array('admin')),
 );
 ?>
