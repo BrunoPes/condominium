@@ -61,11 +61,11 @@ class ReservaController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Reserva;
+		// $model = new Reserva;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+		ver_dump($_POST['reservas']);
 		if(isset($_POST['Reserva']))
 		{
 			$model->attributes=$_POST['Reserva'];
@@ -120,10 +120,23 @@ class ReservaController extends Controller
 	 * Lists all models.
 	 */
 	public function actionIndex()
-	{
-		$dataProvider=new CActiveDataProvider('Reserva');
+	{	
+		// $dataProvider=new CActiveDataProvider('Reserva');
+		$today = date('Y-m-01');
+		$end   = date('Y-m-t');
+		$reservas = Yii::app()->db->createCommand()
+					    ->select('dataInicio, dataFim, espacoId, espaco.nomeEspaco')
+					    ->from('reserva')
+					    ->join('espaco', 'reserva.espacoId = espaco.id')
+					    ->where('dataInicio >= :dtIn AND dataFim <= :end', array(':dtIn'=>$today, ':end' => $end))
+					    ->queryAll();
+		$espacos = Yii::app()->db->createCommand()
+					    ->select('nomeEspaco')
+					    ->from('espaco')
+					    ->queryAll();
 		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
+			'reservas' => $reservas,
+			'espacos'  => $espacos
 		));
 	}
 
