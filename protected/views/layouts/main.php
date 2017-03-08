@@ -7,6 +7,7 @@
 	<link href="<?php echo Yii::app()->request->baseUrl; ?>/protected/vendor/dist/css/sb-admin-2.css" rel="stylesheet">
 	<link href="<?php echo Yii::app()->request->baseUrl; ?>/protected/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 	<script src="<?php echo Yii::app()->request->baseUrl; ?>/protected/vendor/jquery/jquery.min.js"></script>
+	<script src="<?php echo Yii::app()->request->baseUrl; ?>/protected/vendor/jquery-ui/jquery-ui.min.js"></script>
 	<script src="<?php echo Yii::app()->request->baseUrl; ?>/protected/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="<?php echo Yii::app()->request->baseUrl; ?>/protected/vendor/metisMenu/metisMenu.min.js"></script>
 	<script src="<?php echo Yii::app()->request->baseUrl; ?>/protected/vendor/dist/js/sb-admin-2.js"></script>
