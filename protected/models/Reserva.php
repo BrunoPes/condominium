@@ -30,10 +30,23 @@ class Reserva extends CActiveRecord
 		return array(
 			array('dataInicio, dataFim, usuarioId, espacoId', 'required'),
 			array('usuarioId, espacoId', 'numerical', 'integerOnly'=>true),
+			array('espacoId', 'checkReserve', 'on' => 'insert'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, dataInicio, dataFim, usuarioId, espacoId', 'safe', 'on'=>'search'),
 		);
+	}
+
+	public function checkReserve() {
+		$id = (int) $this->espacoId;
+		$dt = $this->dataInicio;
+		$query = Reserva::model()->findAllByAttributes(array("espacoId" => $id, "dataInicio" => $dt));
+		if(sizeof($query) >= 1){
+			for($i=0; $i < sizeof($query); $i++) {
+				var_dump($query[$i]->attributes);
+			}
+			$this->addError('espacoId','Espaço já reservado.');
+		}
 	}
 
 	/**

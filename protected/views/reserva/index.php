@@ -8,22 +8,13 @@
 
 
     <script type="text/javascript">
+
+    	var espacos  = <?= json_encode($espacos)?>;
     	var reservando = [];
-    	var currentSpace = "";
+    	var currentSpace = "";    	
 
-    	$("#saveEvents").on('click', function(a, b) {
-    		console.log("asd");
-    		$.ajax({
-				method: "POST",
-				url: "reserva/create",
-				data: { 'reservas': reservando }
-			}).done(function( msg ) {
-				alert("Data Saved");
-			});
-    	});
-
-    	spaceName = name => {
-    		html  = '<div name="'+name+'" onDragStart={clickedSpace(event)} style="width:130px;" class="draggable fc-event-container">';
+    	spaceName = (name,id) => {
+    		html  = '<div name="'+name+'" id="'+id+'" onDragStart={clickedSpace(event)} style="width:130px;" class="draggable fc-event-container">';
     		html += '<a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end"><div class="fc-content"> <span class="fc-title">';
     		html += name + '</span></div></a></div>';
 
@@ -47,17 +38,19 @@
     	}
 
         $(document).ready(function() {
-        	let espacos  = <?= json_encode($espacos)?>;
         	let reservas = <?= json_encode($reservas)?>;
-        	let arrayReservas = [];        	
+        	let idCounter = 0;
+        	let arrayReservas = [];   
 
+        	$(espacos).each((i,ele) => spaceName(ele.nomeEspaco, ele.id));
         	$(reservas).each( (i,ele) => {
         		arrayReservas.push({"title": ele.nomeEspaco, "start": ele.dataInicio});
         	});
 
+
             $('#calendar').fullCalendar({
                 defaultDate: new Date(),
-                height: 800,
+                height: 700,
                 locale: "pt-br",
                 titleFormat: 'MMMM',
                 droppable: true,
@@ -84,17 +77,38 @@
                 	events = $("#calendar").fullCalendar('clientEvents');
                 	if(!filterSpaceDay(date, events)) {
 	                	var newEv = {
+							id: idCounter,
 							title: currentSpace,
 							start: date.format("YYYY-MM-DD"),
 							color: "rgb(220,200, 55)",
+							editable: true,
+							dragStart: _ => {
+								console.log("HU3 BR TEST!!!!");
+							},
 						};
+						spaceTitle = newEv.title.toLowerCase();
+						spaceId = $("#namesCol").children().filter((i, ele) => $(ele).attr('name').toLowerCase() == spaceTitle).attr('id');
+						reservando.push({espacoId: parseInt(spaceId), dataInicio: newEv.start, id: idCounter++});
+						
 						$("#calendar").fullCalendar('renderEvent', newEv);
-						reservando.push({'nomeEspaco': newEv.title, 'dataInicio': newEv.start});
                 	}
-                },                
+                },
             });
 
-            $(espacos).each((i,ele) => spaceName(ele.nomeEspaco));
+            $("#saveEvents").on('click', _ => {
+	    		console.log("Save");
+	    		$.ajax({
+					method: "POST",
+					url: "index.php?r=reserva/create",
+					data: { 'reservas': reservando }
+				}).done(function( msg ) {
+					location.reload();
+				});
+	    	});
+
+	    	$("#removeEvents").on('dragStart', _ => {
+
+	    	});
 
             $(".draggable").draggable({
                 revert: true,
@@ -105,14 +119,35 @@
 </head>
 
 <div class="row" style="text-align: center; margin-top: -20px">
-	<div>
-    	<h1>Reservas</h1>
-    	<button id="saveEvents" style="float: right; margin-right: 15px;" type="button" class="btn btn-succes">Save</button>
-    </div>
-    <div id="namesCol" class="col-md-2" style="font-size: 15px;">
-    	
-    </div>
-    <div class="col-md-10" style="">
-        <div id='calendar'></div>
-    </div>
+	<div class="col-md-12" style="border-bottom: 2px solid #EDD; margin-top: -8px;">
+		<div class="col-md-10">
+    		<h1>Reservas</h1>
+    	</div>
+    	<div class="col-md-2">
+    		<div style="padding-top: 25px;">
+				<button id="saveEvents" style="width: 147px" type="button" class="btn btn-success">Salvar</button>
+			</div>
+    	</div>
+    </div>    
+    <div class="col-md-12" style="margin-top: 10px">
+	    <div class="col-md-2" style="background-color: #eee;border-radius: 9px; border: solid #ccc 1px;">
+	    	<h3>Espaços</h3>
+	    	<div id="namesCol" class="row">
+	    	</div>
+		</div>
+	    <div class="col-md-10" style="">
+	        <div id='calendar'></div>
+	    </div>
+	</div>
 </div>
+
+<style type="text/css">
+	#namesCol{
+	    font-size: 15px;	    
+	    padding: 0;
+	    padding-left: 25px;
+	    padding-bottom: 13px;
+	    margin-top: 5px;
+	}
+
+</style>

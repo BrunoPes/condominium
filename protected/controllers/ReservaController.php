@@ -6,24 +6,8 @@ class ReservaController extends Controller
 
 	 
 	// public $layout='//layouts/column2.php';
-
-	/**
-	 * @return array action filters
-	 */
-	public function filters()
-	{
-		return array(
-			'accessControl', // perform access control for CRUD operations
-			'postOnly + delete', // we only allow deletion via POST request
-		);
-	}
-
-	/**
-	 * Specifies the access control rules.
-	 * This method is used by the 'accessControl' filter.
-	 * @return array access control rules
-	 */
-	public function accessRules()
+	
+/*	public function accessRules()
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
@@ -43,7 +27,7 @@ class ReservaController extends Controller
 			),
 		);
 	}
-
+*/
 	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
@@ -59,23 +43,25 @@ class ReservaController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
-	{
-		// $model = new Reserva;
-
-		// Uncomment the following line if AJAX validation is needed
+	public function actionCreate() {		
 		// $this->performAjaxValidation($model);
-		ver_dump($_POST['reservas']);
-		if(isset($_POST['Reserva']))
-		{
+		
+		if(isset($_POST['Reserva'])) {
+			$model = new Reserva;
 			$model->attributes=$_POST['Reserva'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
 
-		$this->render('create',array(
-			'model'=>$model,
-		));
+		$reservas = $_POST['reservas'];
+		foreach ($reservas as $i => $reserva) {
+			$model = new Reserva;
+			$model->attributes = $reserva;
+			$model->dataFim = $reserva['dataInicio'];
+			$model->usuarioId = 1;
+
+			$model->save();
+		}
 	}
 
 	/**
@@ -119,21 +105,20 @@ class ReservaController extends Controller
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex()
-	{	
-		// $dataProvider=new CActiveDataProvider('Reserva');
+	public function actionIndex() {			
 		$today = date('Y-m-01');
 		$end   = date('Y-m-t');
 		$reservas = Yii::app()->db->createCommand()
 					    ->select('dataInicio, dataFim, espacoId, espaco.nomeEspaco')
 					    ->from('reserva')
-					    ->join('espaco', 'reserva.espacoId = espaco.id')
-					    ->where('dataInicio >= :dtIn AND dataFim <= :end', array(':dtIn'=>$today, ':end' => $end))
+					    ->join('espaco', 'reserva.espacoId = espaco.id')					    
 					    ->queryAll();
+
 		$espacos = Yii::app()->db->createCommand()
-					    ->select('nomeEspaco')
+					    ->select('id, nomeEspaco')
 					    ->from('espaco')
 					    ->queryAll();
+
 		$this->render('index',array(
 			'reservas' => $reservas,
 			'espacos'  => $espacos
