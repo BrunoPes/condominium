@@ -79,7 +79,6 @@ class Usuario extends CActiveRecord
 
     public function validationPassword($password) {
         $user = Usuario::model()->find("email = :email", array(":email" => $this->email));
-        var_dump($user["senha"], $password);
         if ($user["senha"] == $password)
             return true;
         else

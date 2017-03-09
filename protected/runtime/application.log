@@ -1540,3 +1540,17 @@ REQUEST_URI=/condominium/index.php/site/login
 in C:\xampp\htdocs\condominium\protected\components\UserIdentity.php (35)
 in C:\xampp\htdocs\condominium\protected\models\LoginForm.php (66)
 in C:\xampp\htdocs\condominium\protected\controllers\SiteController.php (95)
+2017/03/09 10:37:00 [error] [php] Missing argument 1 for LoginForm::authenticate(), called in C:\xampp\htdocs\condominium\protected\models\LoginForm.php on line 67 and defined (C:\xampp\htdocs\condominium\protected\models\LoginForm.php:47)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\yii\framework\web\CController.php(286): SiteController->runAction()
+#3 C:\xampp\htdocs\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#5 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\yii\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\condominium\index.php(14): CWebApplication->run()
+REQUEST_URI=/condominium/index.php/site/login
+in C:\xampp\htdocs\condominium\protected\models\LoginForm.php (47)
+in C:\xampp\htdocs\condominium\protected\models\LoginForm.php (67)
+in C:\xampp\htdocs\condominium\protected\controllers\SiteController.php (87)
