@@ -7,6 +7,7 @@
  */
 class UserIdentity extends CUserIdentity
 {
+	public $_id;
 	/**
 	 * Authenticates a user.
 	 * The example implementation makes sure if the username and password
@@ -15,19 +16,33 @@ class UserIdentity extends CUserIdentity
 	 * against some persistent user identity storage (e.g. database).
 	 * @return boolean whether authentication succeeds.
 	 */
-	public function authenticate()
-	{
+	public function authenticate() {
 		$users=array(
 			// username => password
 			'demo'=>'demo',
 			'admin'=>'admin',
 		);
-		if(!isset($users[$this->username]))
-			$this->errorCode=self::ERROR_USERNAME_INVALID;
-		elseif($users[$this->username]!==$this->password)
-			$this->errorCode=self::ERROR_PASSWORD_INVALID;
-		else
-			$this->errorCode=self::ERROR_NONE;
-		return !$this->errorCode;
+
+		$record = Usuario::model()->find('email = :login', array(':login' => $this->username));
+        if ($record === null){
+            $this->errorCode = self::ERROR_USERNAME_INVALID;
+        	return false;
+        }else if (!$record->validationPassword($this->password)){
+            $this->errorCode = self::ERROR_PASSWORD_INVALID;
+            return false;
+        }else {
+			$this->_id = $record->id;
+            $this->setState('id', $record->id);
+            $this->setState('nome', $record->name);
+            $this->setState('email', $record->email);
+            $this->setState('userType', $record->tipoUsuario);
+            $this->errorCode = self::ERROR_NONE;
+        	return true;
+        }
+        return false;
 	}
+
+	public function getId() {
+        return $this->_id;
+    }
 }

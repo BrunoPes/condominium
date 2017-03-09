@@ -9,6 +9,7 @@
  * @property string $email
  * @property string $telefone
  * @property integer $tipoUsuario
+ * @property string $senha
  */
 class Usuario extends CActiveRecord
 {
@@ -28,7 +29,7 @@ class Usuario extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, email, telefone, tipoUsuario', 'required'),
+			array('name, email, tipoUsuario, senha', 'required'),
 			array('tipoUsuario', 'numerical', 'integerOnly'=>true),
 			array('name, email, telefone', 'length', 'max'=>30),
 			// The following rule is used by search().
@@ -59,6 +60,7 @@ class Usuario extends CActiveRecord
 			'email' => 'Email',
 			'telefone' => 'Telefone',
 			'tipoUsuario' => 'Tipo Usuario',
+			'senha' => 'Senha',
 		);
 	}
 
@@ -74,6 +76,16 @@ class Usuario extends CActiveRecord
 	 * @return CActiveDataProvider the data provider that can return the models
 	 * based on the search/filter conditions.
 	 */
+
+    public function validationPassword($password) {
+        $user = Usuario::model()->find("email = :email", array(":email" => $this->email));
+        var_dump($user["senha"], $password);
+        if ($user["senha"] == $password)
+            return true;
+        else
+            return false;
+    }
+
 	public function search()
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.

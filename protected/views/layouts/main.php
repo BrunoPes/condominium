@@ -156,7 +156,7 @@
 		                <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
 		                </li>
 		                <li class="divider"></li>
-		                <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+		                <li><a href="<?= Yii::app()->createUrl('site/logout'); ?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
 		                </li>
 		            </ul>
 		            <!-- /.dropdown-user -->
@@ -180,10 +180,10 @@
 		                    <!-- /input-group -->
 		                </li>
 		                <li>
-		                    <a href="index.php?r=site/index" class="active"><i class="fa fa-home fa-fw"></i> Início</a>
+		                    <a href="<?= Yii::app()->createUrl('site/index'); ?>" class="active"><i class="fa fa-home fa-fw"></i> Início</a>
 		                </li>
 		                <li>
-		                    <a href="index.php?r=reserva/index" class="active"><i class="fa fa-calendar fa-fw"></i> Reservar Espaço</a>
+		                    <a href="<?= Yii::app()->createUrl('reserva/index'); ?>" class="active"><i class="fa fa-calendar fa-fw"></i> Reservar Espaço</a>
 		                </li>
 		                <li>
 		                    <a href="" class="active"><i class="fa fa-barcode fa-fw"></i> Pagamentos e Boletos</a>

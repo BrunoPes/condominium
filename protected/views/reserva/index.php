@@ -11,7 +11,7 @@
 
     	var espacos  = <?= json_encode($espacos)?>;
     	var reservando = [];
-    	var currentSpace = "";    	
+    	var currentSpace = "";
 
     	spaceName = (name,id) => {
     		html  = '<div name="'+name+'" id="'+id+'" onDragStart={clickedSpace(event)} style="width:130px;" class="draggable fc-event-container">';
@@ -21,15 +21,15 @@
     		$("#namesCol").append(html);
     	}
 
-    	clickedSpace = (e) => {    		
-    		currentSpace = $(e.currentTarget).attr('name');    		
+    	clickedSpace = (e) => {
+    		currentSpace = $(e.currentTarget).attr('name');
     	}
 
     	filterSpaceDay = (currentDate, arrayReserves) => {
     		let date = currentDate.format("YYYY-MM-DD");
     		let spacesOnDate = [];
     		let existSpace = false;
-    		$(arrayReserves).filter((i, ele) => ele['start'].format('YYYY-MM-DD') == date).each((i, ele) => {    			
+    		$(arrayReserves).filter((i, ele) => ele['start'].format('YYYY-MM-DD') == date).each((i, ele) => {
     			if(ele.title.trim() == currentSpace)
     				existSpace = true;
     		});
@@ -40,7 +40,7 @@
         $(document).ready(function() {
         	let reservas = <?= json_encode($reservas)?>;
         	let idCounter = 0;
-        	let arrayReservas = [];   
+        	let arrayReservas = [];
 
         	$(espacos).each((i,ele) => spaceName(ele.nomeEspaco, ele.id));
         	$(reservas).each( (i,ele) => {
@@ -89,7 +89,7 @@
 						spaceTitle = newEv.title.toLowerCase();
 						spaceId = $("#namesCol").children().filter((i, ele) => $(ele).attr('name').toLowerCase() == spaceTitle).attr('id');
 						reservando.push({espacoId: parseInt(spaceId), dataInicio: newEv.start, id: idCounter++});
-						
+
 						$("#calendar").fullCalendar('renderEvent', newEv);
                 	}
                 },
@@ -128,7 +128,7 @@
 				<button id="saveEvents" style="width: 147px" type="button" class="btn btn-success">Salvar</button>
 			</div>
     	</div>
-    </div>    
+    </div>
     <div class="col-md-12" style="margin-top: 10px">
 	    <div class="col-md-2" style="background-color: #eee;border-radius: 9px; border: solid #ccc 1px;">
 	    	<h3>Espaços</h3>
@@ -143,9 +143,9 @@
 
 <style type="text/css">
 	#namesCol{
-	    font-size: 15px;	    
+	    font-size: 15px;
 	    padding: 0;
-	    padding-left: 25px;
+	    padding-left: 29%;
 	    padding-bottom: 13px;
 	    margin-top: 5px;
 	}

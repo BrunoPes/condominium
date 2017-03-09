@@ -20,4 +20,15 @@ class Controller extends CController
 	 * for more details on how to specify this property.
 	 */
 	public $breadcrumbs=array();
+
+	protected function beforeAction() {
+		$session = Yii::app()->user->guestName;
+		$action = Yii::app()->getController()->getAction()->controller->action->id;
+		$controller = Yii::app()->getController()->getAction()->controller->id;
+
+		if(($action == "login" && $controller == "site") || !Yii::app()->user->isGuest)
+			return true;
+		else
+			Yii::app()->request->redirect(Yii::app()->createUrl('site/login'));
+	}
 }
