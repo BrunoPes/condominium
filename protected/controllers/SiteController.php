@@ -27,9 +27,37 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
-		$this->render('index');
+		$post = $_POST;
+		$order = "";
+		$userId = Yii::app()->user->id;
+		
+		if($post != NULL && !empty($post)) {
+			$order = $_POST["order"];
+			$order = $order == "orderId" ? "reserva.id" : ($order == "orderSpace" ? "nomeEspaco" : "dataInicio");
+			$order = $order . " DESC";
+		} else {
+			$order = "reserva.id DESC";
+		}
+		
+		$reclamacoes = Reclamacao::model()->findAll(array("order" => "id DESC", 
+														"condition" => "usuarioId = :id", 
+														"params" => array(":id" => $userId)));
+		$reservas = Yii::app()->db->createCommand()
+					->SELECT("reserva.id, reserva.dataInicio, espaco.nomeEspaco")
+					->FROM("reserva")
+					->JOIN("espaco", "espaco.id = reserva.espacoId")
+					->WHERE("reserva.usuarioId = :id", array(":id" => $userId))
+					->ORDER($order)
+					->queryAll();
+
+		if($post != NULL && !empty($post) > 0) {
+			$this->renderPartial("tableReservas", array("reservas" => $reservas));
+		} else {
+			$this->render('index', array(
+				"reclamacoes" => $reclamacoes,
+				"reservas" => $reservas,
+			));
+		}		
 	}
 
 	/**

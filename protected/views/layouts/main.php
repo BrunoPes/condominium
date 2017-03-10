@@ -3,19 +3,23 @@
 	<meta name="language" content="en">
 
 	<link href="<?php echo Yii::app()->request->baseUrl; ?>/protected/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print">
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css">
 	<link href="<?php echo Yii::app()->request->baseUrl; ?>/protected/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 	<link href="<?php echo Yii::app()->request->baseUrl; ?>/protected/vendor/dist/css/sb-admin-2.css" rel="stylesheet">
 	<link href="<?php echo Yii::app()->request->baseUrl; ?>/protected/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	<link href='<?php echo Yii::app()->request->baseUrl; ?>/protected/vendor/bootstrap-fileinput-master/css/fileinput.css' media="all" rel="stylesheet">
 	<script src="<?php echo Yii::app()->request->baseUrl; ?>/protected/vendor/jquery/jquery.min.js"></script>
 	<script src="<?php echo Yii::app()->request->baseUrl; ?>/protected/vendor/jquery-ui/jquery-ui.min.js"></script>
 	<script src="<?php echo Yii::app()->request->baseUrl; ?>/protected/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="<?php echo Yii::app()->request->baseUrl; ?>/protected/vendor/metisMenu/metisMenu.min.js"></script>
 	<script src="<?php echo Yii::app()->request->baseUrl; ?>/protected/vendor/dist/js/sb-admin-2.js"></script>
 	<script src='<?php echo Yii::app()->request->baseUrl; ?>/protected/vendor/moment/moment.js'></script>
+	<script src='<?php echo Yii::app()->request->baseUrl; ?>/protected/vendor/bootstrap-fileinput-master/js/plugins/sortable.js'></script>
+	<script src="<?php echo Yii::app()->request->baseUrl; ?>/protected/vendor/bootstrap-fileinput-master/js/plugins/purify.min.js" type="text/javascript"></script>
+	<script src='<?php echo Yii::app()->request->baseUrl; ?>/protected/vendor/bootstrap-fileinput-master/js/fileinput.js'></script>
 
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print">
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css">
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
@@ -29,7 +33,7 @@
 		            <span class="icon-bar"></span>
 		            <span class="icon-bar"></span>
 		        </button>
-		        <a class="navbar-brand" style="color: #FFF" href="index.php">Condominium</a>
+		        <a class="navbar-brand" style="color: #FFF" href="<?=Yii::app()->createUrl('site/index')?>">Condominium</a>
 		    </div>
 		    <!-- /.navbar-header -->
 
@@ -192,7 +196,7 @@
 		                    <a href="" class="active"><i class="fa fa-briefcase fa-fw"></i> Contratar</a>
 		                </li>
 		                <li>
-		                    <a href="" class="active"><i class="fa fa-exclamation-triangle fa-fw"></i> Reclamações</a>
+		                    <a href="<?= Yii::app()->createUrl('reclamacao/create') ?>" class="active"><i class="fa fa-exclamation-triangle fa-fw"></i> Reclamações</a>
 		                </li>
 		                <li>
 		                    <a href="" class="active"><i class="fa fa-phone-square fa-fw"></i> Portaria</a>

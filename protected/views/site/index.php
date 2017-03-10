@@ -1,20 +1,65 @@
 <?php
 /* @var $this SiteController */
-
+$userName = Yii::app()->user->nome;
 $this->pageTitle=Yii::app()->name;
 ?>
 
-<h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
+<style type="text/css">
+	th{
+		/*width:50%;
+		float: left;*/
+	}
+	td{
+		font-size: 13px;
+	}
+</style>
 
-<p>Congratulations! You have successfully created your Yii application.</p>
+<h4>Bem vindo, <?=$userName?></h4>
+<ul class="nav nav-tabs nav-justified">
+	<li role="presentation" class="active tabClass"><a href="#inicio">Reservas</a></li>
+	<li role="presentation" class="tabClass"><a href="#reclamacoes">Reclamações</a></li>
+	
+	<div class="panel panel-default inicio" style="display: block;">
+		<div class="panel-heading">Suas reservas</div>
+		<div id="tableReservas">
+			<?php $this->renderPartial("tableReservas", array("reservas" => $reservas)); ?>
+		</div>
+	</div>
 
-<p>You may change the content of this page by modifying the following two files:</p>
-<ul>
-	<li>View file: <code><?php echo __FILE__; ?></code></li>
-	<li>Layout file: <code><?php echo $this->getLayoutFile('main'); ?></code></li>
+	<div class="panel panel-default reclamacoes" style="display: none;">
+		<div class="panel-heading">Suas reclamações</div>
+		<table class="table">
+			<tr>
+				<th>#</th>
+				<th>Descrição</th>
+			</tr>
+			<?php
+				foreach ($reclamacoes as $reclam) {
+					echo "<tr><td>".$reclam['id']."</td><td>".$reclam['descricao']."</td></tr>";
+				}
+			?>
+		</table>
+	</div>
 </ul>
 
-<p>For more details on how to further develop this application, please read
-the <a href="http://www.yiiframework.com/doc/">documentation</a>.
-Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
-should you have any questions.</p>
+<script type="text/javascript">
+	$(document).ready( _ => {
+
+		toggleTable = _ => {
+			if($(".inicio").css("display") == "block") {
+				$(".inicio").css({"display": "none"});
+				$(".reclamacoes").css({"display": "block"});
+			} else {
+				$(".inicio").css({"display": "block"});
+				$(".reclamacoes").css({"display": "none"});
+			}
+		}
+
+		$(".tabClass").on("click", e => {
+			$("li").each((i,ele) => { if($(ele).hasClass("active")) $(ele).toggleClass("active") });
+			$(e.target).parent().toggleClass("active");
+
+			toggleTable();
+		});		
+	});
+</script>

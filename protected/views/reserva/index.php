@@ -1,3 +1,20 @@
+<style type="text/css">
+    #namesCol{
+        font-size: 15px;
+        padding: 0;
+        padding-bottom: 13px;
+        margin-top: 5px;
+    }
+
+    .noSelect {        
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+</style>
+
 <head>
     <link rel='stylesheet' href='<?php echo Yii::app()->request->baseUrl; ?>/protected/vendor/fullcalendar/fullcalendar.css' />
     <script src="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.js"></script>
@@ -8,21 +25,24 @@
 
 
     <script type="text/javascript">
-
-    	var espacos  = <?= json_encode($espacos)?>;
+        var zindex = 100;        
+    	var espacos = <?= json_encode($espacos)?>;
     	var reservando = [];
     	var currentSpace = "";
 
     	spaceName = (name,id) => {
-    		html  = '<div name="'+name+'" id="'+id+'" onDragStart={clickedSpace(event)} style="width:130px;" class="draggable fc-event-container">';
-    		html += '<a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end"><div class="fc-content"> <span class="fc-title">';
+    		html  = '<div name="'+name+'" id="'+id+'" class="draggable fc-event-container spaces" style="z-index:'+(zindex--)+';cursor:-webkit-grab">';
+    		html += '<a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end"><div class="fc-content"><span class="fc-title">';
     		html += name + '</span></div></a></div>';
 
     		$("#namesCol").append(html);
     	}
 
-    	clickedSpace = (e) => {
-    		currentSpace = $(e.currentTarget).attr('name');
+    	clickedSpace = event => {
+            let space = $(event.currentTarget);
+            // space.find(".fc-content").css({"cursor": "-webkit-grab"});
+    		currentSpace = space.attr('name');
+            console.log(currentSpace);
     	}
 
     	filterSpaceDay = (currentDate, arrayReserves) => {
@@ -38,15 +58,19 @@
     	}
 
         $(document).ready(function() {
+            let userId   = "<?= $userId ?>";
         	let reservas = <?= json_encode($reservas)?>;
         	let idCounter = 0;
-        	let arrayReservas = [];
+        	let arrayReservas = [];            
 
         	$(espacos).each((i,ele) => spaceName(ele.nomeEspaco, ele.id));
         	$(reservas).each( (i,ele) => {
-        		arrayReservas.push({"title": ele.nomeEspaco, "start": ele.dataInicio});
+        		arrayReservas.push({"title": ele.nomeEspaco, "start": ele.dataInicio, 
+                                    "color": ele.usuarioId.trim()==userId ?  "#5cb85c" : ""});
         	});
 
+            $(".spaces").on("dragstart", event => clickedSpace(event));
+            // $(".spaces").on("click", e => $(e.target).find(".fc-content").css({"cursor": "-webkit-grab"}));
 
             $('#calendar').fullCalendar({
                 defaultDate: new Date(),
@@ -99,7 +123,7 @@
 	    		console.log("Save");
 	    		$.ajax({
 					method: "POST",
-					url: "index.php?r=reserva/create",
+					url: "create",
 					data: { 'reservas': reservando }
 				}).done(function( msg ) {
 					location.reload();
@@ -118,7 +142,7 @@
     </script>
 </head>
 
-<div class="row" style="text-align: center; margin-top: -20px">
+<div class="row .noSelect" style="text-align: center; margin-top: -20px">
 	<div class="col-md-12" style="border-bottom: 2px solid #EDD; margin-top: -8px;">
 		<div class="col-md-10">
     		<h1>Reservas</h1>
@@ -132,7 +156,7 @@
     <div class="col-md-12" style="margin-top: 10px">
 	    <div class="col-md-2" style="background-color: #eee;border-radius: 9px; border: solid #ccc 1px;">
 	    	<h3>Espaços</h3>
-	    	<div id="namesCol" class="row">
+	    	<div id="namesCol">
 	    	</div>
 		</div>
 	    <div class="col-md-10" style="">
@@ -140,14 +164,3 @@
 	    </div>
 	</div>
 </div>
-
-<style type="text/css">
-	#namesCol{
-	    font-size: 15px;
-	    padding: 0;
-	    padding-left: 29%;
-	    padding-bottom: 13px;
-	    margin-top: 5px;
-	}
-
-</style>

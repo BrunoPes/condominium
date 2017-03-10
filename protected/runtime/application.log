@@ -1554,3 +1554,711 @@ REQUEST_URI=/condominium/index.php/site/login
 in C:\xampp\htdocs\condominium\protected\models\LoginForm.php (47)
 in C:\xampp\htdocs\condominium\protected\models\LoginForm.php (67)
 in C:\xampp\htdocs\condominium\protected\controllers\SiteController.php (87)
+2017/03/09 18:29:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.php".' in C:\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\yii\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 C:\yii\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index.php')
+#3 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/condominium/index.php/site/index.php
+HTTP_REFERER=http://localhost/condominium/index.php/site/index
+---
+2017/03/09 18:29:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.php".' in C:\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\yii\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 C:\yii\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index.php')
+#3 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/condominium/index.php/site/index.php
+HTTP_REFERER=http://localhost/condominium/index.php/site/index
+---
+2017/03/09 18:30:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.php".' in C:\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\yii\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 C:\yii\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index.php')
+#3 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/condominium/index.php/site/index.php
+HTTP_REFERER=http://localhost/condominium/index.php/site/index
+---
+2017/03/09 18:33:34 [error] [php] Undefined variable: dataProvider (C:\xampp\htdocs\condominium\protected\views\reclamacao\index.php:18)
+Stack trace:
+#0 C:\yii\framework\web\CController.php(869): ReclamacaoController->renderFile()
+#1 C:\yii\framework\web\CController.php(782): ReclamacaoController->renderPartial()
+#2 C:\xampp\htdocs\condominium\protected\controllers\ReclamacaoController.php(129): ReclamacaoController->render()
+#3 C:\yii\framework\web\actions\CInlineAction.php(49): ReclamacaoController->actionIndex()
+#4 C:\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\yii\framework\web\filters\CFilterChain.php(133): ReclamacaoController->runAction()
+#6 C:\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 C:\yii\framework\web\filters\CInlineFilter.php(58): ReclamacaoController->filterAccessControl()
+#9 C:\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 C:\yii\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\yii\framework\web\CController.php(265): ReclamacaoController->runActionWithFilters()
+#12 C:\yii\framework\web\CWebApplication.php(282): ReclamacaoController->run()
+#13 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\condominium\index.php(14): CWebApplication->run()
+REQUEST_URI=/condominium/index.php/reclamacao/index
+in C:\xampp\htdocs\condominium\protected\views\reclamacao\index.php (18)
+in C:\xampp\htdocs\condominium\protected\controllers\ReclamacaoController.php (129)
+in C:\xampp\htdocs\condominium\index.php (14)
+2017/03/09 18:33:48 [error] [exception.CException] exception 'CException' with message 'The "dataProvider" property cannot be empty.' in C:\yii\framework\zii\widgets\CBaseListView.php:123
+Stack trace:
+#0 C:\yii\framework\zii\widgets\CListView.php(211): CBaseListView->init()
+#1 C:\yii\framework\web\CBaseController.php(147): CListView->init()
+#2 C:\yii\framework\web\CBaseController.php(180): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#3 C:\xampp\htdocs\condominium\protected\views\reclamacao\index.php(20): CBaseController->widget('zii.widgets.CLi...', Array)
+#4 C:\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#8 C:\xampp\htdocs\condominium\protected\controllers\ReclamacaoController.php(129): CController->render('index', Array)
+#9 C:\yii\framework\web\actions\CInlineAction.php(49): ReclamacaoController->actionIndex()
+#10 C:\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 C:\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 C:\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 C:\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 C:\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 C:\yii\framework\web\CController.php(291): CFilterChain->run()
+#17 C:\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 C:\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#19 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('reclamacao/inde...')
+#20 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#21 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#22 {main}
+REQUEST_URI=/condominium/index.php/reclamacao/index
+HTTP_REFERER=http://localhost/condominium/index.php/reserva/index
+---
+2017/03/09 18:41:37 [error] [php] Undefined variable: form (C:\xampp\htdocs\condominium\protected\views\reclamacao\_form.php:17)
+Stack trace:
+#0 C:\yii\framework\web\CController.php(869): ReclamacaoController->renderFile()
+#1 C:\xampp\htdocs\condominium\protected\views\reclamacao\create.php(18): ReclamacaoController->renderPartial()
+#2 C:\yii\framework\web\CBaseController.php(126): require()
+#3 C:\yii\framework\web\CBaseController.php(95): ReclamacaoController->renderInternal()
+#4 C:\yii\framework\web\CController.php(869): ReclamacaoController->renderFile()
+#5 C:\yii\framework\web\CController.php(782): ReclamacaoController->renderPartial()
+#6 C:\xampp\htdocs\condominium\protected\controllers\ReclamacaoController.php(78): ReclamacaoController->render()
+#7 C:\yii\framework\web\actions\CInlineAction.php(49): ReclamacaoController->actionCreate()
+#8 C:\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\yii\framework\web\filters\CFilterChain.php(133): ReclamacaoController->runAction()
+#10 C:\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\yii\framework\web\filters\CInlineFilter.php(58): ReclamacaoController->filterAccessControl()
+#13 C:\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\yii\framework\web\CController.php(265): ReclamacaoController->runActionWithFilters()
+#16 C:\yii\framework\web\CWebApplication.php(282): ReclamacaoController->run()
+#17 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\condominium\index.php(14): CWebApplication->run()
+REQUEST_URI=/condominium/index.php/reclamacao/create
+in C:\xampp\htdocs\condominium\protected\views\reclamacao\_form.php (17)
+in C:\xampp\htdocs\condominium\protected\views\reclamacao\create.php (18)
+in C:\xampp\htdocs\condominium\protected\controllers\ReclamacaoController.php (78)
+2017/03/09 18:50:03 [error] [php] Undefined variable: form (C:\xampp\htdocs\condominium\protected\views\reclamacao\_form.php:17)
+Stack trace:
+#0 C:\yii\framework\web\CController.php(869): ReclamacaoController->renderFile()
+#1 C:\xampp\htdocs\condominium\protected\views\reclamacao\create.php(18): ReclamacaoController->renderPartial()
+#2 C:\yii\framework\web\CBaseController.php(126): require()
+#3 C:\yii\framework\web\CBaseController.php(95): ReclamacaoController->renderInternal()
+#4 C:\yii\framework\web\CController.php(869): ReclamacaoController->renderFile()
+#5 C:\yii\framework\web\CController.php(782): ReclamacaoController->renderPartial()
+#6 C:\xampp\htdocs\condominium\protected\controllers\ReclamacaoController.php(78): ReclamacaoController->render()
+#7 C:\yii\framework\web\actions\CInlineAction.php(49): ReclamacaoController->actionCreate()
+#8 C:\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\yii\framework\web\filters\CFilterChain.php(133): ReclamacaoController->runAction()
+#10 C:\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\yii\framework\web\filters\CInlineFilter.php(58): ReclamacaoController->filterAccessControl()
+#13 C:\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\yii\framework\web\CController.php(265): ReclamacaoController->runActionWithFilters()
+#16 C:\yii\framework\web\CWebApplication.php(282): ReclamacaoController->run()
+#17 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\condominium\index.php(14): CWebApplication->run()
+REQUEST_URI=/condominium/index.php/reclamacao/create
+in C:\xampp\htdocs\condominium\protected\views\reclamacao\_form.php (17)
+in C:\xampp\htdocs\condominium\protected\views\reclamacao\create.php (18)
+in C:\xampp\htdocs\condominium\protected\controllers\ReclamacaoController.php (78)
+2017/03/09 18:50:06 [error] [php] Undefined variable: form (C:\xampp\htdocs\condominium\protected\views\reclamacao\_form.php:17)
+Stack trace:
+#0 C:\yii\framework\web\CController.php(869): ReclamacaoController->renderFile()
+#1 C:\xampp\htdocs\condominium\protected\views\reclamacao\create.php(18): ReclamacaoController->renderPartial()
+#2 C:\yii\framework\web\CBaseController.php(126): require()
+#3 C:\yii\framework\web\CBaseController.php(95): ReclamacaoController->renderInternal()
+#4 C:\yii\framework\web\CController.php(869): ReclamacaoController->renderFile()
+#5 C:\yii\framework\web\CController.php(782): ReclamacaoController->renderPartial()
+#6 C:\xampp\htdocs\condominium\protected\controllers\ReclamacaoController.php(78): ReclamacaoController->render()
+#7 C:\yii\framework\web\actions\CInlineAction.php(49): ReclamacaoController->actionCreate()
+#8 C:\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\yii\framework\web\filters\CFilterChain.php(133): ReclamacaoController->runAction()
+#10 C:\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\yii\framework\web\filters\CInlineFilter.php(58): ReclamacaoController->filterAccessControl()
+#13 C:\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\yii\framework\web\CController.php(265): ReclamacaoController->runActionWithFilters()
+#16 C:\yii\framework\web\CWebApplication.php(282): ReclamacaoController->run()
+#17 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\condominium\index.php(14): CWebApplication->run()
+REQUEST_URI=/condominium/index.php/reclamacao/create
+in C:\xampp\htdocs\condominium\protected\views\reclamacao\_form.php (17)
+in C:\xampp\htdocs\condominium\protected\views\reclamacao\create.php (18)
+in C:\xampp\htdocs\condominium\protected\controllers\ReclamacaoController.php (78)
+2017/03/09 18:50:08 [error] [php] Undefined variable: form (C:\xampp\htdocs\condominium\protected\views\reclamacao\_form.php:17)
+Stack trace:
+#0 C:\yii\framework\web\CController.php(869): ReclamacaoController->renderFile()
+#1 C:\xampp\htdocs\condominium\protected\views\reclamacao\create.php(18): ReclamacaoController->renderPartial()
+#2 C:\yii\framework\web\CBaseController.php(126): require()
+#3 C:\yii\framework\web\CBaseController.php(95): ReclamacaoController->renderInternal()
+#4 C:\yii\framework\web\CController.php(869): ReclamacaoController->renderFile()
+#5 C:\yii\framework\web\CController.php(782): ReclamacaoController->renderPartial()
+#6 C:\xampp\htdocs\condominium\protected\controllers\ReclamacaoController.php(78): ReclamacaoController->render()
+#7 C:\yii\framework\web\actions\CInlineAction.php(49): ReclamacaoController->actionCreate()
+#8 C:\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\yii\framework\web\filters\CFilterChain.php(133): ReclamacaoController->runAction()
+#10 C:\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\yii\framework\web\filters\CInlineFilter.php(58): ReclamacaoController->filterAccessControl()
+#13 C:\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\yii\framework\web\CController.php(265): ReclamacaoController->runActionWithFilters()
+#16 C:\yii\framework\web\CWebApplication.php(282): ReclamacaoController->run()
+#17 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\condominium\index.php(14): CWebApplication->run()
+REQUEST_URI=/condominium/index.php/reclamacao/create
+in C:\xampp\htdocs\condominium\protected\views\reclamacao\_form.php (17)
+in C:\xampp\htdocs\condominium\protected\views\reclamacao\create.php (18)
+in C:\xampp\htdocs\condominium\protected\controllers\ReclamacaoController.php (78)
+2017/03/09 18:50:08 [error] [php] Undefined variable: form (C:\xampp\htdocs\condominium\protected\views\reclamacao\_form.php:17)
+Stack trace:
+#0 C:\yii\framework\web\CController.php(869): ReclamacaoController->renderFile()
+#1 C:\xampp\htdocs\condominium\protected\views\reclamacao\create.php(18): ReclamacaoController->renderPartial()
+#2 C:\yii\framework\web\CBaseController.php(126): require()
+#3 C:\yii\framework\web\CBaseController.php(95): ReclamacaoController->renderInternal()
+#4 C:\yii\framework\web\CController.php(869): ReclamacaoController->renderFile()
+#5 C:\yii\framework\web\CController.php(782): ReclamacaoController->renderPartial()
+#6 C:\xampp\htdocs\condominium\protected\controllers\ReclamacaoController.php(78): ReclamacaoController->render()
+#7 C:\yii\framework\web\actions\CInlineAction.php(49): ReclamacaoController->actionCreate()
+#8 C:\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\yii\framework\web\filters\CFilterChain.php(133): ReclamacaoController->runAction()
+#10 C:\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\yii\framework\web\filters\CInlineFilter.php(58): ReclamacaoController->filterAccessControl()
+#13 C:\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\yii\framework\web\CController.php(265): ReclamacaoController->runActionWithFilters()
+#16 C:\yii\framework\web\CWebApplication.php(282): ReclamacaoController->run()
+#17 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\condominium\index.php(14): CWebApplication->run()
+REQUEST_URI=/condominium/index.php/reclamacao/create
+in C:\xampp\htdocs\condominium\protected\views\reclamacao\_form.php (17)
+in C:\xampp\htdocs\condominium\protected\views\reclamacao\create.php (18)
+in C:\xampp\htdocs\condominium\protected\controllers\ReclamacaoController.php (78)
+2017/03/09 18:50:08 [error] [php] Undefined variable: form (C:\xampp\htdocs\condominium\protected\views\reclamacao\_form.php:17)
+Stack trace:
+#0 C:\yii\framework\web\CController.php(869): ReclamacaoController->renderFile()
+#1 C:\xampp\htdocs\condominium\protected\views\reclamacao\create.php(18): ReclamacaoController->renderPartial()
+#2 C:\yii\framework\web\CBaseController.php(126): require()
+#3 C:\yii\framework\web\CBaseController.php(95): ReclamacaoController->renderInternal()
+#4 C:\yii\framework\web\CController.php(869): ReclamacaoController->renderFile()
+#5 C:\yii\framework\web\CController.php(782): ReclamacaoController->renderPartial()
+#6 C:\xampp\htdocs\condominium\protected\controllers\ReclamacaoController.php(78): ReclamacaoController->render()
+#7 C:\yii\framework\web\actions\CInlineAction.php(49): ReclamacaoController->actionCreate()
+#8 C:\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\yii\framework\web\filters\CFilterChain.php(133): ReclamacaoController->runAction()
+#10 C:\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\yii\framework\web\filters\CInlineFilter.php(58): ReclamacaoController->filterAccessControl()
+#13 C:\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\yii\framework\web\CController.php(265): ReclamacaoController->runActionWithFilters()
+#16 C:\yii\framework\web\CWebApplication.php(282): ReclamacaoController->run()
+#17 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\condominium\index.php(14): CWebApplication->run()
+REQUEST_URI=/condominium/index.php/reclamacao/create
+in C:\xampp\htdocs\condominium\protected\views\reclamacao\_form.php (17)
+in C:\xampp\htdocs\condominium\protected\views\reclamacao\create.php (18)
+in C:\xampp\htdocs\condominium\protected\controllers\ReclamacaoController.php (78)
+2017/03/09 18:50:08 [error] [php] Undefined variable: form (C:\xampp\htdocs\condominium\protected\views\reclamacao\_form.php:17)
+Stack trace:
+#0 C:\yii\framework\web\CController.php(869): ReclamacaoController->renderFile()
+#1 C:\xampp\htdocs\condominium\protected\views\reclamacao\create.php(18): ReclamacaoController->renderPartial()
+#2 C:\yii\framework\web\CBaseController.php(126): require()
+#3 C:\yii\framework\web\CBaseController.php(95): ReclamacaoController->renderInternal()
+#4 C:\yii\framework\web\CController.php(869): ReclamacaoController->renderFile()
+#5 C:\yii\framework\web\CController.php(782): ReclamacaoController->renderPartial()
+#6 C:\xampp\htdocs\condominium\protected\controllers\ReclamacaoController.php(78): ReclamacaoController->render()
+#7 C:\yii\framework\web\actions\CInlineAction.php(49): ReclamacaoController->actionCreate()
+#8 C:\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\yii\framework\web\filters\CFilterChain.php(133): ReclamacaoController->runAction()
+#10 C:\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\yii\framework\web\filters\CInlineFilter.php(58): ReclamacaoController->filterAccessControl()
+#13 C:\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\yii\framework\web\CController.php(265): ReclamacaoController->runActionWithFilters()
+#16 C:\yii\framework\web\CWebApplication.php(282): ReclamacaoController->run()
+#17 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\condominium\index.php(14): CWebApplication->run()
+REQUEST_URI=/condominium/index.php/reclamacao/create
+in C:\xampp\htdocs\condominium\protected\views\reclamacao\_form.php (17)
+in C:\xampp\htdocs\condominium\protected\views\reclamacao\create.php (18)
+in C:\xampp\htdocs\condominium\protected\controllers\ReclamacaoController.php (78)
+2017/03/09 18:50:08 [error] [php] Undefined variable: form (C:\xampp\htdocs\condominium\protected\views\reclamacao\_form.php:17)
+Stack trace:
+#0 C:\yii\framework\web\CController.php(869): ReclamacaoController->renderFile()
+#1 C:\xampp\htdocs\condominium\protected\views\reclamacao\create.php(18): ReclamacaoController->renderPartial()
+#2 C:\yii\framework\web\CBaseController.php(126): require()
+#3 C:\yii\framework\web\CBaseController.php(95): ReclamacaoController->renderInternal()
+#4 C:\yii\framework\web\CController.php(869): ReclamacaoController->renderFile()
+#5 C:\yii\framework\web\CController.php(782): ReclamacaoController->renderPartial()
+#6 C:\xampp\htdocs\condominium\protected\controllers\ReclamacaoController.php(78): ReclamacaoController->render()
+#7 C:\yii\framework\web\actions\CInlineAction.php(49): ReclamacaoController->actionCreate()
+#8 C:\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\yii\framework\web\filters\CFilterChain.php(133): ReclamacaoController->runAction()
+#10 C:\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\yii\framework\web\filters\CInlineFilter.php(58): ReclamacaoController->filterAccessControl()
+#13 C:\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\yii\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\yii\framework\web\CController.php(265): ReclamacaoController->runActionWithFilters()
+#16 C:\yii\framework\web\CWebApplication.php(282): ReclamacaoController->run()
+#17 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\condominium\index.php(14): CWebApplication->run()
+REQUEST_URI=/condominium/index.php/reclamacao/create
+in C:\xampp\htdocs\condominium\protected\views\reclamacao\_form.php (17)
+in C:\xampp\htdocs\condominium\protected\views\reclamacao\create.php (18)
+in C:\xampp\htdocs\condominium\protected\controllers\ReclamacaoController.php (78)
+2017/03/09 19:43:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.php".' in C:\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\yii\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 C:\yii\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('reserva/index.p...')
+#3 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/condominium/index.php/reserva/index.php?r=reserva/create
+HTTP_REFERER=http://localhost/condominium/index.php/reserva/index
+---
+2017/03/09 19:45:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.php".' in C:\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\yii\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 C:\yii\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('reserva/index.p...')
+#3 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/condominium/index.php/reserva/index.php?r=reserva/create
+HTTP_REFERER=http://localhost/condominium/index.php/reserva/index
+---
+2017/03/09 19:51:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/fileinput_locale_fr.js".' in C:\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('js/fileinput_lo...')
+#1 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/condominium/index.php/js/fileinput_locale_fr.js
+HTTP_REFERER=http://localhost/condominium/index.php/reserva/index
+---
+2017/03/09 19:51:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/explorer/theme.js".' in C:\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/explorer...')
+#1 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/condominium/index.php/themes/explorer/theme.js
+HTTP_REFERER=http://localhost/condominium/index.php/reserva/index
+---
+2017/03/09 19:51:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/fileinput_locale_es.js".' in C:\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('js/fileinput_lo...')
+#1 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/condominium/index.php/js/fileinput_locale_es.js
+HTTP_REFERER=http://localhost/condominium/index.php/reserva/index
+---
+2017/03/09 19:51:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/explorer/theme.css".' in C:\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/explorer...')
+#1 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/condominium/index.php/themes/explorer/theme.css
+HTTP_REFERER=http://localhost/condominium/index.php/reserva/index
+---
+2017/03/09 19:51:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/fileinput_locale_fr.js".' in C:\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('js/fileinput_lo...')
+#1 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/condominium/index.php/js/fileinput_locale_fr.js
+HTTP_REFERER=http://localhost/condominium/index.php/reserva/index
+---
+2017/03/09 19:51:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/fileinput_locale_es.js".' in C:\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('js/fileinput_lo...')
+#1 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/condominium/index.php/js/fileinput_locale_es.js
+HTTP_REFERER=http://localhost/condominium/index.php/reserva/index
+---
+2017/03/09 19:51:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/explorer/theme.css".' in C:\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/explorer...')
+#1 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/condominium/index.php/themes/explorer/theme.css
+HTTP_REFERER=http://localhost/condominium/index.php/reserva/index
+---
+2017/03/09 19:51:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/explorer/theme.js".' in C:\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/explorer...')
+#1 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/condominium/index.php/themes/explorer/theme.js
+HTTP_REFERER=http://localhost/condominium/index.php/reserva/index
+---
+2017/03/10 00:27:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "reclamacao".' in C:\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\yii\framework\web\CController.php(270): CController->missingAction('reclamacao')
+#1 C:\yii\framework\web\CWebApplication.php(282): CController->run('reclamacao')
+#2 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('reclamacao/recl...')
+#3 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/condominium/index.php/reclamacao/reclamacao/receivefile
+HTTP_REFERER=http://localhost/condominium/index.php/reclamacao/create
+---
+2017/03/10 00:33:22 [error] [php] Undefined index: urlAnexo (C:\xampp\htdocs\condominium\protected\controllers\ReclamacaoController.php:148)
+Stack trace:
+#0 C:\yii\framework\web\filters\CFilterChain.php(133): ReclamacaoController->runAction()
+#1 C:\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\yii\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\yii\framework\web\filters\CInlineFilter.php(58): ReclamacaoController->filterAccessControl()
+#4 C:\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\yii\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\yii\framework\web\CController.php(265): ReclamacaoController->runActionWithFilters()
+#7 C:\yii\framework\web\CWebApplication.php(282): ReclamacaoController->run()
+#8 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\condominium\index.php(14): CWebApplication->run()
+REQUEST_URI=/condominium/index.php/reclamacao/receivefile
+in C:\xampp\htdocs\condominium\protected\controllers\ReclamacaoController.php (148)
+in C:\xampp\htdocs\condominium\index.php (14)
+2017/03/10 01:49:10 [error] [exception.CException] exception 'CException' with message 'CActiveForm and its behaviors do not have a method or closure named "fileInput".' in C:\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\condominium\protected\views\reclamacao\_form.php(38): CComponent->__call('fileInput', Array)
+#1 C:\xampp\htdocs\condominium\protected\views\reclamacao\_form.php(38): CActiveForm->fileInput(Object(Reclamacao), 'urlAnexo', Array, Array)
+#2 C:\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\condominium\protected\views\reclamacao\create.php(18): CController->renderPartial('_form', Array)
+#6 C:\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#10 C:\xampp\htdocs\condominium\protected\controllers\ReclamacaoController.php(80): CController->render('create', Array)
+#11 C:\yii\framework\web\actions\CInlineAction.php(49): ReclamacaoController->actionCreate()
+#12 C:\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 C:\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#21 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('reclamacao/crea...')
+#22 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#23 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/condominium/index.php/reclamacao/create
+HTTP_REFERER=http://localhost/condominium/index.php/reclamacao/create
+---
+2017/03/10 01:52:26 [error] [exception.CException] exception 'CException' with message 'CActiveForm and its behaviors do not have a method or closure named "field".' in C:\yii\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\condominium\protected\views\reclamacao\_form.php(36): CComponent->__call('field', Array)
+#1 C:\xampp\htdocs\condominium\protected\views\reclamacao\_form.php(36): CActiveForm->field(Object(Reclamacao), 'urlAnexo')
+#2 C:\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\condominium\protected\views\reclamacao\create.php(18): CController->renderPartial('_form', Array)
+#6 C:\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\yii\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#10 C:\xampp\htdocs\condominium\protected\controllers\ReclamacaoController.php(80): CController->render('create', Array)
+#11 C:\yii\framework\web\actions\CInlineAction.php(49): ReclamacaoController->actionCreate()
+#12 C:\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\yii\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\yii\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\yii\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 C:\yii\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\yii\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\yii\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\yii\framework\web\CWebApplication.php(282): CController->run('create')
+#21 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('reclamacao/crea...')
+#22 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#23 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#24 {main}
+REQUEST_URI=/condominium/index.php/reclamacao/create
+HTTP_REFERER=http://localhost/condominium/index.php/reclamacao/create
+---
+2017/03/10 02:21:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.php".' in C:\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\yii\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 C:\yii\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('reserva/index.p...')
+#3 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/condominium/index.php/reserva/index.php?r=reserva/create
+HTTP_REFERER=http://localhost/condominium/index.php/reserva/index
+---
+2017/03/10 02:22:44 [warning] [application] Failed to set unsafe attribute "id" of "Reserva".
+in C:\xampp\htdocs\condominium\protected\controllers\ReservaController.php (59)
+in C:\xampp\htdocs\condominium\index.php (14)
+2017/03/10 02:22:57 [warning] [application] Failed to set unsafe attribute "id" of "Reserva".
+in C:\xampp\htdocs\condominium\protected\controllers\ReservaController.php (59)
+in C:\xampp\htdocs\condominium\index.php (14)
+2017/03/10 02:22:57 [warning] [application] Failed to set unsafe attribute "id" of "Reserva".
+in C:\xampp\htdocs\condominium\protected\controllers\ReservaController.php (59)
+in C:\xampp\htdocs\condominium\index.php (14)
+2017/03/10 03:15:10 [error] [exception.CException] exception 'CException' with message 'Property "Reclamacao.0" is not defined.' in C:\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 C:\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 C:\xampp\htdocs\condominium\protected\views\site\index.php(3): CModel->offsetGet(0)
+#3 C:\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#4 C:\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#5 C:\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#7 C:\xampp\htdocs\condominium\protected\controllers\SiteController.php(34): CController->render('index', Array)
+#8 C:\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#9 C:\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#13 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#14 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/condominium/index.php/site/index
+HTTP_REFERER=http://localhost/condominium/index.php/reserva/index
+---
+2017/03/10 03:15:14 [error] [exception.CException] exception 'CException' with message 'Property "Reclamacao.0" is not defined.' in C:\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('0')
+#1 C:\yii\framework\base\CModel.php(596): CActiveRecord->__get('0')
+#2 C:\xampp\htdocs\condominium\protected\views\site\index.php(3): CModel->offsetGet(0)
+#3 C:\yii\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#4 C:\yii\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#5 C:\yii\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\yii\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#7 C:\xampp\htdocs\condominium\protected\controllers\SiteController.php(34): CController->render('index', Array)
+#8 C:\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#9 C:\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\yii\framework\web\CWebApplication.php(282): CController->run('index')
+#13 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index')
+#14 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/condominium/index.php/site/index
+HTTP_REFERER=http://localhost/condominium/index.php/reserva/index
+---
+2017/03/10 03:15:39 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\condominium\protected\views\site\index.php:3)
+Stack trace:
+#0 C:\yii\framework\web\CController.php(869): SiteController->renderFile()
+#1 C:\yii\framework\web\CController.php(782): SiteController->renderPartial()
+#2 C:\xampp\htdocs\condominium\protected\controllers\SiteController.php(34): SiteController->render()
+#3 C:\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#4 C:\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\yii\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\condominium\index.php(14): CWebApplication->run()
+REQUEST_URI=/condominium/index.php/site/index
+in C:\xampp\htdocs\condominium\protected\views\site\index.php (3)
+in C:\xampp\htdocs\condominium\protected\controllers\SiteController.php (34)
+in C:\xampp\htdocs\condominium\index.php (14)
+2017/03/10 03:42:59 [error] [exception.CException] exception 'CException' with message 'Property "Reserva.db" is not defined.' in C:\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('db')
+#1 C:\xampp\htdocs\condominium\protected\controllers\SiteController.php(33): CActiveRecord->__get('db')
+#2 C:\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#3 C:\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#8 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/condominium/index.php
+HTTP_REFERER=http://localhost/condominium/index.php/site/login
+---
+2017/03/10 03:43:11 [error] [exception.CException] exception 'CException' with message 'Property "Reserva.db" is not defined.' in C:\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('db')
+#1 C:\xampp\htdocs\condominium\protected\controllers\SiteController.php(33): CActiveRecord->__get('db')
+#2 C:\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#3 C:\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#8 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/condominium/index.php
+HTTP_REFERER=http://localhost/condominium/index.php/site/login
+---
+2017/03/10 03:45:39 [error] [exception.CException] exception 'CException' with message 'Property "Reserva.db" is not defined.' in C:\yii\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\yii\framework\db\ar\CActiveRecord.php(145): CComponent->__get('db')
+#1 C:\xampp\htdocs\condominium\protected\controllers\SiteController.php(33): CActiveRecord->__get('db')
+#2 C:\yii\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#3 C:\yii\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\yii\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\yii\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\yii\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#8 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/condominium/index.php
+HTTP_REFERER=http://localhost/condominium/index.php/site/login
+---
+2017/03/10 03:46:37 [error] [php] Missing argument 2 for CDbCommand::join(), called in C:\xampp\htdocs\condominium\protected\controllers\SiteController.php on line 36 and defined (C:\yii\framework\db\CDbCommand.php:868)
+Stack trace:
+#0 C:\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\yii\framework\web\CController.php(286): SiteController->runAction()
+#2 C:\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 C:\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#4 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\condominium\index.php(14): CWebApplication->run()
+REQUEST_URI=/condominium/index.php
+in C:\xampp\htdocs\condominium\protected\controllers\SiteController.php (36)
+in C:\xampp\htdocs\condominium\index.php (14)
+2017/03/10 04:46:38 [error] [php] Undefined index: order (C:\xampp\htdocs\condominium\protected\controllers\SiteController.php:30)
+Stack trace:
+#0 C:\yii\framework\web\CController.php(286): SiteController->runAction()
+#1 C:\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 C:\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#3 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\condominium\index.php(14): CWebApplication->run()
+REQUEST_URI=/condominium/index.php
+in C:\xampp\htdocs\condominium\protected\controllers\SiteController.php (30)
+in C:\xampp\htdocs\condominium\index.php (14)
+2017/03/10 05:04:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.php".' in C:\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\yii\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 C:\yii\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index.php')
+#3 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/condominium/index.php/site/index.php
+HTTP_REFERER=http://localhost/condominium/index.php/site/index
+---
+2017/03/10 05:04:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.php".' in C:\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\yii\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 C:\yii\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index.php')
+#3 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/condominium/index.php/site/index.php
+HTTP_REFERER=http://localhost/condominium/index.php/site/index
+---
+2017/03/10 05:04:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.php".' in C:\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\yii\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 C:\yii\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index.php')
+#3 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/condominium/index.php/site/index.php
+HTTP_REFERER=http://localhost/condominium/index.php/site/index
+---
+2017/03/10 05:04:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.php".' in C:\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\yii\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 C:\yii\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index.php')
+#3 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/condominium/index.php/site/index.php
+HTTP_REFERER=http://localhost/condominium/index.php/site/index
+---
+2017/03/10 05:04:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.php".' in C:\yii\framework\web\CController.php:483
+Stack trace:
+#0 C:\yii\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 C:\yii\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 C:\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index.php')
+#3 C:\yii\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\condominium\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/condominium/index.php/site/index.php
+---
+2017/03/10 05:34:36 [warning] [application] Failed to set unsafe attribute "id" of "Reserva".
+in C:\xampp\htdocs\condominium\protected\controllers\ReservaController.php (59)
+in C:\xampp\htdocs\condominium\index.php (14)
+2017/03/10 05:34:36 [warning] [application] Failed to set unsafe attribute "id" of "Reserva".
+in C:\xampp\htdocs\condominium\protected\controllers\ReservaController.php (59)
+in C:\xampp\htdocs\condominium\index.php (14)
+2017/03/10 05:34:36 [warning] [application] Failed to set unsafe attribute "id" of "Reserva".
+in C:\xampp\htdocs\condominium\protected\controllers\ReservaController.php (59)
+in C:\xampp\htdocs\condominium\index.php (14)
+2017/03/10 05:36:30 [warning] [application] Failed to set unsafe attribute "id" of "Reserva".
+in C:\xampp\htdocs\condominium\protected\controllers\ReservaController.php (59)
+in C:\xampp\htdocs\condominium\index.php (14)
+2017/03/10 05:36:30 [warning] [application] Failed to set unsafe attribute "id" of "Reserva".
+in C:\xampp\htdocs\condominium\protected\controllers\ReservaController.php (59)
+in C:\xampp\htdocs\condominium\index.php (14)
+2017/03/10 05:36:33 [warning] [application] Failed to set unsafe attribute "id" of "Reserva".
+in C:\xampp\htdocs\condominium\protected\controllers\ReservaController.php (59)
+in C:\xampp\htdocs\condominium\index.php (14)
+2017/03/10 05:56:04 [warning] [application] Failed to set unsafe attribute "id" of "Reserva".
+in C:\xampp\htdocs\condominium\protected\controllers\ReservaController.php (59)
+in C:\xampp\htdocs\condominium\index.php (14)
+2017/03/10 05:56:05 [warning] [application] Failed to set unsafe attribute "id" of "Reserva".
+in C:\xampp\htdocs\condominium\protected\controllers\ReservaController.php (59)
+in C:\xampp\htdocs\condominium\index.php (14)
+2017/03/10 05:56:05 [warning] [application] Failed to set unsafe attribute "id" of "Reserva".
+in C:\xampp\htdocs\condominium\protected\controllers\ReservaController.php (59)
+in C:\xampp\htdocs\condominium\index.php (14)
+2017/03/10 05:56:05 [warning] [application] Failed to set unsafe attribute "id" of "Reserva".
+in C:\xampp\htdocs\condominium\protected\controllers\ReservaController.php (59)
+in C:\xampp\htdocs\condominium\index.php (14)

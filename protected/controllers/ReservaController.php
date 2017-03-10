@@ -58,7 +58,7 @@ class ReservaController extends Controller
 			$model = new Reserva;
 			$model->attributes = $reserva;
 			$model->dataFim = $reserva['dataInicio'];
-			$model->usuarioId = 1;
+			$model->usuarioId = Yii::app()->user->id;
 
 			$model->save();
 		}
@@ -105,11 +105,12 @@ class ReservaController extends Controller
 	/**
 	 * Lists all models.
 	 */
-	public function actionIndex() {			
+	public function actionIndex() {
+		$userId = Yii::app()->user->id;
 		$today = date('Y-m-01');
 		$end   = date('Y-m-t');
 		$reservas = Yii::app()->db->createCommand()
-					    ->select('dataInicio, dataFim, espacoId, espaco.nomeEspaco')
+					    ->select('usuarioId, dataInicio, dataFim, espacoId, espaco.nomeEspaco')
 					    ->from('reserva')
 					    ->join('espaco', 'reserva.espacoId = espaco.id')					    
 					    ->queryAll();
@@ -121,7 +122,8 @@ class ReservaController extends Controller
 
 		$this->render('index',array(
 			'reservas' => $reservas,
-			'espacos'  => $espacos
+			'espacos'  => $espacos,
+			'userId'   => $userId
 		));
 	}
 
