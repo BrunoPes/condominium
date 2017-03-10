@@ -146,15 +146,25 @@ class ReclamacaoController extends Controller
 	}
 
 	public function actionReceiveFile() {
-		$fileName = $_FILES["Reclamacao"]["name"]["urlAnexo"];
-		$arrayFile = [			
-			"initialPreview"=>['<img src="/images/'.$fileName.'" class="file-preview-image" alt="Arquivo" title="Arquivo">'],
-			"initialPreviewConfig"=> [ 
-				["caption"=> $fileName, "width"=> '120px', "url"=> "http://localhost/avatar/delete", "key"=> 100,"extra"=> ["id"=> 100]] 
-			],
-		];
+		$out  = [];
+		$file = $_FILES["Reclamacao"];
 
-		echo json_encode($arrayFile);
+	    $ext = explode('.', basename($file["name"]["urlAnexo"]));
+	    $target = "uploads/" . md5(uniqid()) . "." . array_pop($ext);
+	    $path = "C:/xampp/htdocs/condominium/" . $target;
+	    if(move_uploaded_file($file["tmp_name"]["urlAnexo"], $path)) {
+	        $success = true;
+	        $out = ['error'=> $path];
+	    } else {
+	        unlink($target);
+	        $success = false;
+	        $out = ['error'=>'Error while uploading images. Contact the system administrator'];
+	        break;
+	    }
+
+		// var_dump($target);
+
+		echo json_encode($out);
 	}
 
 	/**

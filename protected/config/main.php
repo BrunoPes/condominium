@@ -52,10 +52,13 @@ return array(
 
 		// database settings are configured in database.php
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=condominiumdb',
+		    // 'connectionString' => 'mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/;dbname=condominium',
+			'connectionString' => 'mysql:host=localhost;dbname=condominium',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => '',
+			// 'username' => 'adminDF3ARnc',
+			// 'password' => 'zMjlXzALG8be',
 			'charset' => 'utf8',
 		),
 

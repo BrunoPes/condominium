@@ -30,7 +30,7 @@ class SiteController extends Controller
 		$post = $_POST;
 		$order = "";
 		$userId = Yii::app()->user->id;
-		
+
 		if($post != NULL && !empty($post)) {
 			$order = $_POST["order"];
 			$order = $order == "orderId" ? "reserva.id" : ($order == "orderSpace" ? "nomeEspaco" : "dataInicio");
@@ -38,9 +38,9 @@ class SiteController extends Controller
 		} else {
 			$order = "reserva.id DESC";
 		}
-		
-		$reclamacoes = Reclamacao::model()->findAll(array("order" => "id DESC", 
-														"condition" => "usuarioId = :id", 
+
+		$reclamacoes = Reclamacao::model()->findAll(array("order" => "id DESC",
+														"condition" => "usuarioId = :id",
 														"params" => array(":id" => $userId)));
 		$reservas = Yii::app()->db->createCommand()
 					->SELECT("reserva.id, reserva.dataInicio, espaco.nomeEspaco")
@@ -57,7 +57,7 @@ class SiteController extends Controller
 				"reclamacoes" => $reclamacoes,
 				"reservas" => $reservas,
 			));
-		}		
+		}
 	}
 
 	/**
@@ -113,7 +113,7 @@ class SiteController extends Controller
 			$model->attributes=$_POST['LoginForm'];
 			// validate user input and redirect to the previous page if valid
 			if($model->login())
-				$this->redirect(Yii::app()->user->returnUrl);
+				$this->redirect(Yii::app()->createUrl('site/index'));
 		}
 		// display the login form
 		$this->render('login',array('model'=>$model));

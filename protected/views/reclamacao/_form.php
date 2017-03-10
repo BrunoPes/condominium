@@ -18,7 +18,7 @@
 )); ?>
 
 	<div class="container" style="padding-left: 0px">
-		<p class="note">Os campos marcados <span class="required">(*)</span> são obrigatórios.</p>	
+		<p class="note">Os campos marcados <span class="required">(*)</span> são obrigatórios.</p>
 	    <div class="col-md-10" style="padding-left: 0px">
 	        <form role="form">
 	            <fieldset>
@@ -31,11 +31,12 @@
 							<?php echo $form->error($model,'descricao'); ?>
 						</div>
 					</div>
-					<div class="row" style="display:none;">
-						<div class="form-group col-md-10" style="padding-left: 0px">
+					<div class="row" style="display:block;">
+						<div class="form-group col-md-10" style="padding-left: 0px;">
 							<?php echo $form->labelEx($model,'urlAnexo', ['class' => 'control-label']); ?>
-							<?php echo $form->textField($model,'urlAnexo', 
-											['id'=>'input-1a', 'type'=>'file','class'=> 'file form-control', 'data-show-preview'=>'false'],
+							<?php echo $form->textField($model,'urlAnexo',
+											['id'=>'input-1a', 'type'=>'file','class'=> 'file form-control', 'data-show-preview'=>'false',
+											"style"=>"height:10px"],
 											array('size'=>60,'maxlength'=>100)); ?>
 							<?php echo $form->error($model,'urlAnexo'); ?>
 						</div>
@@ -53,12 +54,22 @@
 
 <script type="text/javascript">
 
-	$(document).ready( _ => {		
+	$(document).ready( _ => {
 		$("#input-1a").attr("type", "file");
 		$("#input-1a").fileinput({
-			'showUpload': false
-			'showPreview': true,
-	        'allowedFileExtensions': ['jpg', 'png', 'gif', 'pdf']
+			'showUpload': true,
+			'uploadUrl': 'receiveFile',
+			'uploadAsync':false,
+	        'allowedFileExtensions': ['jpg', 'png', 'gif', 'pdf'],
+	        'msgAjaxError': data => {
+	        	console.log("Data". data);
+	        },
+	        'fileerror': data => {
+	        	console.log("Data". data);
+	        },
+	        'fileuploaderror':data => {
+	        	console.log("Data". data);
+	        },
     	});
 	});
 </script>
