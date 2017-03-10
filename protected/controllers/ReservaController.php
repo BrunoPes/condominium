@@ -56,9 +56,10 @@ class ReservaController extends Controller
 		$reservas = $_POST['reservas'];
 		foreach ($reservas as $i => $reserva) {
 			$model = new Reserva;
-			$model->attributes = $reserva;
-			$model->dataFim = $reserva['dataInicio'];
-			$model->usuarioId = Yii::app()->user->id;
+			$model->espacoId   = $reserva['espacoId'];
+			$model->dataInicio = $reserva['dataInicio'];
+			$model->dataFim    = $reserva['dataInicio'];
+			$model->usuarioId  = Yii::app()->user->id;
 
 			$model->save();
 		}

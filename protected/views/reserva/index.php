@@ -154,7 +154,7 @@
     	</div>
     </div>
     <div class="col-md-12" style="margin-top: 10px">
-	    <div class="col-md-2" style="background-color: #eee;border-radius: 9px; border: solid #ccc 1px;">
+	    <div class="col-md-2" style="background-color: #eee;border-radius: 9px; border: solid #ccc 1px; margin-top: 45px">
 	    	<h3>Espaços</h3>
 	    	<div id="namesCol">
 	    	</div>
