@@ -26,9 +26,11 @@ class Controller extends CController
 		$action = Yii::app()->getController()->getAction()->controller->action->id;
 		$controller = Yii::app()->getController()->getAction()->controller->id;
 
-		if(($action == "login" && $controller == "site") || !Yii::app()->user->isGuest)
+		if(($action == "login" && $controller == "site") || !Yii::app()->user->isGuest){			
 			return true;
-		else
+		}
+		else{
 			Yii::app()->request->redirect(Yii::app()->createUrl('site/login'));
+		}
 	}
 }

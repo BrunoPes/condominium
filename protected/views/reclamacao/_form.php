@@ -17,7 +17,7 @@
 	// See class documentation of CActiveForm for details on this.
 )); ?>
 
-	<div class="container" style="padding-left: 0px">
+	<div class="container" style="padding-left: 0px; width:100%">
 		<p class="note">Os campos marcados <span class="required">(*)</span> são obrigatórios.</p>
 	    <div class="col-md-10" style="padding-left: 0px">
 	        <form role="form">

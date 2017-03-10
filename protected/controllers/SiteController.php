@@ -30,6 +30,11 @@ class SiteController extends Controller
 		$post = $_POST;
 		$order = "";
 		$userId = Yii::app()->user->id;
+		$userType = Yii::app()->user->userType;
+
+		if($userType == 2) {
+			Yii::app()->request->redirect(Yii::app()->createUrl('pedidoservico/index'));
+		}
 
 		if($post != NULL && !empty($post)) {
 			$order = $_POST["order"];

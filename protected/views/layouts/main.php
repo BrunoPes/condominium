@@ -1,3 +1,6 @@
+<?php
+	$userTipo = Yii::app()->user->userType;
+?>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="language" content="en">
@@ -183,6 +186,7 @@
 		                    </div>
 		                    <!-- /input-group -->
 		                </li>
+		                <?php if($userTipo == 1) { ?>
 		                <li>
 		                    <a href="<?= Yii::app()->createUrl('site/index'); ?>" class="active"><i class="fa fa-home fa-fw"></i> Início</a>
 		                </li>
@@ -193,7 +197,7 @@
 		                    <a href="" class="active"><i class="fa fa-barcode fa-fw"></i> Pagamentos e Boletos</a>
 		                </li>
 		                <li>
-		                    <a href="" class="active"><i class="fa fa-briefcase fa-fw"></i> Contratar</a>
+		                    <a href="<?= Yii::app()->createUrl('servico/index');?>" class="active"><i class="fa fa-briefcase fa-fw"></i> Contratar</a>
 		                </li>
 		                <li>
 		                    <a href="<?= Yii::app()->createUrl('reclamacao/create') ?>" class="active"><i class="fa fa-exclamation-triangle fa-fw"></i> Reclamações</a>
@@ -204,6 +208,11 @@
 		                <li>
 		                    <a href="" class="active"><i class="fa fa-check fa-fw"></i> Autorizações</a>
 		                </li>
+		                <?php } else if($userTipo == 2) {?>
+		                <li>
+		                    <a href="<?= Yii::app()->createUrl('pedidoservico/index'); ?>" class="active"><i class="fa fa-home fa-fw"></i> Início</a>
+		                </li>
+		                <?php } ?>
 		            </ul>
 		        </div>
 		        <!-- /.sidebar-collapse -->
